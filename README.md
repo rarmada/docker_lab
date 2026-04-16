@@ -43,40 +43,29 @@ Ejecutar el contenedor y comprobar curl
 ## 3. Volúmenes persistentes
 Montar el volumen y correr el contenedor
 ```
-docker run -d --name bdtarea3  --mount type=bind,source=C:\Users\rafaa\cursodevops\bbdd,target=/var/lib/postgresql  -e POSTGRES_USER=rafael  -e POSTGRES_PASSWORD=1234   -e POSTGRES_DB=mitarea   postgres
-```
-
-Verificar que esta corriendo
-```
-docker ps
-```
-entrar en el contenedor
-```
+docker volume create datos_postgres
+docker run -d --name bdtarea3 --mount type=volume,source=datos_postgres,target=/var/lib/postgresql -e POSTGRES_USER=rafael -e POSTGRES_PASSWORD=1234  -e POSTGRES_DB=mitarea   postgres
 docker exec -it bdtarea3 psql -U rafael -d mitarea
 ```
-<img width="481" height="142" alt="image" src="https://github.com/user-attachments/assets/8fc4641d-494a-4b14-856e-27930a4ec44e" />
-
-
-<img width="749" height="123" alt="image" src="https://github.com/user-attachments/assets/528528b8-5eab-4f52-ac53-b8df8132a0fa" />
+Crear la tabla e insertar datos
+<img width="1131" height="338" alt="image" src="https://github.com/user-attachments/assets/0aa82d2a-455a-4f4e-a68e-742eb25a9ab9" />
 
 ###Comprobación
 Para el contenedor
 ```
-<img width="514" height="231" alt="image" src="https://github.com/user-attachments/assets/fab9dab0-277a-44b7-a1e2-9bfc7cd7556c" />
+docker stop bdtarea3
 ```
-
 Elimina el contenedor
 ```
 docker rm bdtarea3
 ```
 Crea un nuevo contenedor usando el mismo volumen
 ```
-docker run -d  --name bdtarea3_nuevo --mount type=bind,source=C:\Users\rafaa\cursodevops\bbdd,target=/var/lib/postgresql  -e POSTGRES_USER=rafael   -e POSTGRES_PASSWORD=1234   -e POSTGRES_DB=mitarea   postgres
-docker exec -it bdtarea3_nuevo psql -U rafael -d mitarea
+docker run -d  --name bdtarea3-comprobacion   --mount type=volume,source=datos_postgres,target=/var/lib/postgresql   -e POSTGRES_USER=rafael   -e POSTGRES_PASSWORD=1234   -e POSTGRES_DB=mitarea   postgres
+docker exec -it bdtarea3-comprobacion psql -U rafael -d mitarea
 ```
+<img width="711" height="226" alt="image" src="https://github.com/user-attachments/assets/c1f8c772-0f73-4941-a757-6e1a56ec460d" />
 
-Comprueba que los datos siguen existiendo.
-
-<img width="514" height="231" alt="image" src="https://github.com/user-attachments/assets/071be983-1145-4ed0-b0f1-521bf766f916" />
+<img width="638" height="209" alt="image" src="https://github.com/user-attachments/assets/95fb7fbf-e2d2-4535-a4c2-3f90bb546e3b" />
 
 
