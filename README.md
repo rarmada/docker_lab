@@ -68,4 +68,15 @@ docker exec -it bdtarea3-comprobacion psql -U rafael -d mitarea
 
 <img width="638" height="209" alt="image" src="https://github.com/user-attachments/assets/95fb7fbf-e2d2-4535-a4c2-3f90bb546e3b" />
 
+# 4. Bind mounts
+Crea un archivo en tu máquina index.html con el contenido <h1>Hola Docker</h1>
+docker run -d --name nginx-tarea -p 80:80 --mount type=bind,source=C:\Users\rafaarmada\cursodevops\contenedores\index.html,target=/usr/share/nginx/html/index.html nginx
+<img width="607" height="265" alt="image" src="https://github.com/user-attachments/assets/1fb010e7-bde8-4d79-bf1f-6ca58853ae1f" />
+
+##Pregunta:
+
+¿Qué ocurre si modificas el archivo index.html en tu máquina?
+al modificar index.html y recargar la página esta aparece con la modificación realizada
+
+
 
