@@ -3,7 +3,9 @@
 ejecuta un contenedor basado en la imagen:
 ```
 docker run -it --name miubuntu ubuntu bash
+```
 Instalo curl
+```
 apt update 
 apt install curl
 curl --version
