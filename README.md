@@ -70,6 +70,11 @@ Elimina el contenedor
 docker rm bdtarea3
 ```
 Crea un nuevo contenedor usando el mismo volumen
+```
+docker run -d  --name bdtarea3_nuevo --mount type=bind,source=C:\Users\rafaa\cursodevops\bbdd,target=/var/lib/postgresql  -e POSTGRES_USER=rafael   -e POSTGRES_PASSWORD=1234   -e POSTGRES_DB=mitarea   postgres
+docker exec -it bdtarea3_nuevo psql -U rafael -d mitarea
+```
+
 Comprueba que los datos siguen existiendo.
 
 <img width="514" height="231" alt="image" src="https://github.com/user-attachments/assets/071be983-1145-4ed0-b0f1-521bf766f916" />
