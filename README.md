@@ -24,11 +24,15 @@ docker commit miubuntu ubuntu-curl
 
 #PASO 2. Dockerfile
 Creamos el archivo Dockerfile
+```
  notepad Dockerfile
      FROM ubuntu
      RUN apt-get update && apt-get install -y curl
+```
  Contruimos la imagen
- docker build -t ubuntu-curl-v2 .
+```
+  docker build -t ubuntu-curl-v2 .
+```
 
 <img width="1085" height="395" alt="image" src="https://github.com/user-attachments/assets/95e40750-9171-4f4e-a5e9-17f247b5fa56" />
 
