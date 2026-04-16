@@ -29,6 +29,7 @@ Creamos el archivo Dockerfile
 <img width="1085" height="395" alt="image" src="https://github.com/user-attachments/assets/95e40750-9171-4f4e-a5e9-17f247b5fa56" />
 
 Ejecutar el contenedor y comprobar curl
+
 <img width="1099" height="188" alt="image" src="https://github.com/user-attachments/assets/ca7dcf22-9fab-454d-8187-521da5c0e851" />
 
 ## 3. Volúmenes persistentes
