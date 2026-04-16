@@ -1,17 +1,13 @@
 ## 1. Creando imágenes
 #Paso 1.
 ejecuta un contenedor basado en la imagen:
-
+```
 docker run -it --name miubuntu ubuntu bash
-
 Instalo curl
-
 apt update 
-
 apt install curl
-
 curl --version
-
+```
 
 <img width="499" height="323" alt="image" src="https://github.com/user-attachments/assets/c5c85bfa-9eba-4700-8a31-8f3db0cbea68" />
 
