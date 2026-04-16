@@ -41,4 +41,36 @@ Ejecutar el contenedor y comprobar curl
 <img width="1099" height="188" alt="image" src="https://github.com/user-attachments/assets/ca7dcf22-9fab-454d-8187-521da5c0e851" />
 
 ## 3. Volúmenes persistentes
+Montar el volumen y correr el contenedor
+```
+docker run -d --name bdtarea3  --mount type=bind,source=C:\Users\rafaa\cursodevops\bbdd,target=/var/lib/postgresql  -e POSTGRES_USER=rafael  -e POSTGRES_PASSWORD=1234   -e POSTGRES_DB=mitarea   postgres
+```
+
+Verificar que esta corriendo
+```
+docker ps
+```
+
+entrar en el contenedor
+```
+docker exec -it bdtarea3 psql -U rafael -d mitarea
+```
+
+
+
+Verificar que esta corriendo
+docker ps
+
+
+entrar en el contenedor
+docker exec -it bdtarea3 psql -U rafael -d mitarea
+docker run -d --name bdtarea3  --mount type=bind,source=C:\Users\rafaa\cursodevops\bbdd,target=/var/lib/postgresql  -e POSTGRES_USER=rafael  -e POSTGRES_PASSWORD=1234   -e POSTGRES_DB=mitarea   postgres
+
+Verificar que esta corriendo
+
+docker ps
+
+
+entrar en el contenedor
+docker exec -it bdtarea3 psql -U rafael -d mitarea
 
