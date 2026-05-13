@@ -79,8 +79,34 @@ docker run -d --name nginx-tarea -p 80:80 --mount type=bind,source=C:\Users\rafa
 al modificar index.html y recargar la página esta aparece con la modificación realizada
 
 # 6. Red 
-Crea una red llamada my-net
+##Crea una red llamada my-net
 
 docker network create my-net
-<img width="7680" height="2160" alt="image" src="https://github.com/user-attachments/assets/7902278c-755f-4dad-a314-a6a3b999dfe6" />
+<img width="1435" height="150" alt="image" src="https://github.com/user-attachments/assets/19dd3c0b-b04d-4b51-9813-af7c94e06402" />
+
+## Arranca dos contenedores ubuntu en esa red.
+Instala ping si es necesario.
+
+Arrancamos el primer contenedor
+ sudo docker run -it --name ubuntu-ej61 --network my-net ubuntu bash
+<img width="2087" height="388" alt="image" src="https://github.com/user-attachments/assets/482919b2-9521-4bb3-9dcd-bb64067f0963" />
+Instalo ping apt update && apt install -y iputils-ping
+
+Arrancamos el segundo contenedor
+ sudo docker run -it --name ubuntu-ej62 --network my-net ubuntu bash
+<img width="2125" height="296" alt="image" src="https://github.com/user-attachments/assets/a128f3bc-daa8-4cc1-867c-0a7b26c0b8bc" />
+
+## Desde un contenedor intenta hacer:
+Para averiguar las ips usamos
+sudo docker network inspect my-net
+<img width="2009" height="1857" alt="image" src="https://github.com/user-attachments/assets/fc8754e8-f037-48d9-931d-13c8c92e8d6f" />
+
+<img width="1326" height="510" alt="image" src="https://github.com/user-attachments/assets/0b3ed29f-9750-4819-87bf-8af5ba708d2e" />
+
+<img width="1308" height="436" alt="image" src="https://github.com/user-attachments/assets/988282b9-4eec-4d7a-8ffb-e1e47aab82ee" />
+
+##Pregunta
+¿Los contenedores pueden comunicarse entre sí?
+
+Si se pueden comunicar entre si
 
