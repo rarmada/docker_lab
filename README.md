@@ -110,3 +110,28 @@ sudo docker network inspect my-net
 
 Si se pueden comunicar entre si
 
+# 9. Docker Compose --- Compartiendo volúmenes
+Crea un fichero:
+
+docker-compose.yml
+ 
+Con dos servicios.
+writer
+Debe:
+ montar un volumen en /app/logs
+ escribir un timestamp cada 30 segundos
+reader
+Debe:
+ montar el volumen en modo solo lectura
+ mostrar el contenido en consola
+
+
+<img width="1079" height="883" alt="image" src="https://github.com/user-attachments/assets/e3226415-4a60-41ab-ab59-7dfb17a1836a" />
+
+Con docker compose up  levantamos los servicios 
+<img width="1276" height="437" alt="image" src="https://github.com/user-attachments/assets/cd40b5b8-0fc5-4aff-88f7-76122f4d02b6" />
+sudo docker compose ps
+
+<img width="2170" height="284" alt="image" src="https://github.com/user-attachments/assets/3883cb2b-195e-41d8-8f24-c2f54ca1845c" />
+
+    
