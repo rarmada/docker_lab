@@ -78,5 +78,9 @@ docker run -d --name nginx-tarea -p 80:80 --mount type=bind,source=C:\Users\rafa
 ¿Qué ocurre si modificas el archivo index.html en tu máquina?
 al modificar index.html y recargar la página esta aparece con la modificación realizada
 
+# 6. Red 
+Crea una red llamada my-net
 
+docker network create my-net
+<img width="7680" height="2160" alt="image" src="https://github.com/user-attachments/assets/7902278c-755f-4dad-a314-a6a3b999dfe6" />
 
